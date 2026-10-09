@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thumbnail Grabber</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+  <main class="mx-auto w-full max-w-3xl px-4 py-10">
+    <h1 class="font-display text-3xl font-bold tracking-tight">Thumbnail Grabber</h1>
+    <p class="mb-6 mt-1 text-slate-600 dark:text-slate-400">Paste a YouTube link, pick a size, and save the thumbnail.</p>
+
+    <section class="rounded-xl border border-slate-300 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+      <div class="flex flex-wrap gap-2.5">
+        <input id="url" type="text" inputmode="url" autocomplete="off" aria-label="YouTube link"
+          placeholder="https://www.youtube.com/watch?v=..."
+          class="min-w-0 flex-1 basis-72 rounded-md border border-slate-300 bg-slate-50 px-3 py-2.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-600 dark:border-slate-700 dark:bg-slate-950">
+        <button id="go" class="btn btn-primary">Get thumbnail</button>
+      </div>
+      <p id="err" role="alert" class="mt-2.5 min-h-6 text-red-700 dark:text-red-400"></p>
+
+      <div id="result" class="mt-4 hidden">
+        <img id="preview" alt="Thumbnail preview" class="aspect-video w-full rounded-lg bg-black object-contain">
+        <div class="mb-4 mt-2 flex justify-between text-sm text-slate-600 dark:text-slate-400">
+          <span id="dims"></span><span id="vid"></span>
+        </div>
+
+        <fieldset class="mb-4">
+          <legend class="mb-2 font-semibold">Quality</legend>
+          <div id="opts" class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-2"></div>
+        </fieldset>
+
+        <div class="flex flex-wrap gap-2.5">
+          <button id="dl" class="btn btn-primary">Download</button>
+          <button id="open" class="btn btn-ghost">Open in new tab</button>
+          <button id="copy" class="btn btn-ghost">Copy image link</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

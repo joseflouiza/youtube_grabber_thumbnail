@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply rounded-md px-4 py-2.5 font-semibold transition disabled:cursor-not-allowed disabled:opacity-50
+      focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600;
+  }
+  .btn-primary { @apply bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-400 dark:text-slate-950; }
+  .btn-ghost { @apply border border-slate-300 hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800; }
+}
